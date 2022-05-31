@@ -1,0 +1,20 @@
+$breakpoint-max: (
+  "sp": "(max-width: 599px)",
+  "ta": "(max-width: 1024px)",
+);
+$breakpoint-min: (
+  "sp": "(min-width: 600px)",
+  "ta": "(min-width: 1025px)",
+);
+
+@mixin mq-max($breakpoint) {
+  @media screen and #{map-get($breakpoint-max, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-min($breakpoint) {
+  @media screen and #{map-get($breakpoint-min, $breakpoint)} {
+    @content;
+  }
+}
